@@ -1,3 +1,5 @@
-tensorflow
+face_alignment
+scikit-image
+torch
 pandas
 numpy
