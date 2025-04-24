@@ -7,6 +7,9 @@ import math
 
 def monitor_find(path="C:/Dev/RerenderCalc/output", save=True, output_csv="monitor_positions.csv"):
     model = YOLO("yolov8x.pt")
+    model.to('cuda')
+    print("GPU available:", torch.cuda.is_available())  # Should be True
+    print("Model device:", next(model.model.parameters()).device)
     print("🔧 YOLOv8x | Left-prioritized screen selection (top 3 leftmost candidates)")
 
     output_data = []
@@ -75,6 +78,9 @@ def monitor_find(path="C:/Dev/RerenderCalc/output", save=True, output_csv="monit
 
 def monitor_find_and_label(path="C:/Dev/RerenderCalc/output", save=True, output_csv="monitor_positions.csv"):
     model = YOLO("yolov8x.pt")
+    model.to('cuda')
+    print("GPU available:", torch.cuda.is_available())  # Should be True
+    print("Model device:", next(model.model.parameters()).device)
     print("🔧 YOLOv8x | Left-prioritized selection + annotated image output")
 
     edited_dir = os.path.join(path, "edited_images")

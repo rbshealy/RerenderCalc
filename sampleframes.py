@@ -2,7 +2,7 @@ import cv2
 import os
 
 from monitor_find import monitor_find, monitor_find_and_label, monitor_find_adv
-from nose_find import nose_find
+from nose_find import nose_find_adv
 
 def sample_frames(video_path, output_dir, freq):
     """Converts a video to frames and saves them in the output directory."""
@@ -91,6 +91,15 @@ if __name__ == "__main__":
     #nose_find()
 
     #sample_frames("C:\Dev\RerenderCalc\eye_gaze_9279.mp4","C:\Dev\RerenderCalc\output",1)
-    monitor_find_adv(output_csv="monitor_positions_10.csv",delta=10)
-    monitor_find_adv(output_csv="monitor_positions_20.csv",delta=20)
-    monitor_find_adv(output_csv="monitor_positions_30.csv",delta=30)
+    #monitor_find_adv(output_csv="monitor_positions_10.csv",delta=10)
+    #monitor_find_adv(output_csv="monitor_positions_20.csv",delta=20)
+    #monitor_find_adv(output_csv="monitor_positions_30.csv",delta=30)
+
+    #monitor_find_and_label(save=False)3
+
+    #sample_frames("5_min_vid.mp4","C:\Dev\RerenderCalc\output",1)
+    nose_find_adv(output_csv="nose_positions_10.csv", thres=10)
+    nose_find_adv(output_csv="nose_positions_20.csv",thres=20)
+    nose_find_adv(output_csv="nose_positions_30.csv",thres=30)
+
+    pass
